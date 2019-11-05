@@ -1,5 +1,5 @@
 {% set name = "nexusformat" %}
-{% set version = "0.4.20" %}
+{% set version = "0.5.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,12 +7,14 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "58023fe0913a6d8273afc971cdc64ec0fc909f5d7d39a7819df0674ca2108ec2"
+  sha256: 99d898a79846606de3edc902c02145ae7737c2b0cdb2b0714df108529cb459c1
 
 build:
   number: 0
   entry_points:
     - nxstack=nexusformat.scripts.nxstack:main
+    - nxduplicate=nexusformat.scripts.nxduplicate:main
+    - nexusformat=nexusformat.scripts.nexusformat:main
   noarch: "python"
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -24,6 +26,7 @@ requirements:
     - numpy
   run:
     - h5py
+    - ipython
     - numpy
     - python
 
@@ -34,6 +37,8 @@ test:
     - nexusformat.scripts
   commands:
     - nxstack --help
+    - nxduplicate --help
+    - nexusformat --help
 
 about:
   home: "https://nexpy.github.io/nexpy/"
