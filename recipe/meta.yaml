@@ -1,13 +1,13 @@
 {% set name = "nexusformat" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 7acc16a00cb4d2152c78c63629578a5ddec5674bcff733c52acac0a08f8d1646
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5e19a2c24dc467b70add3e5340b8528e215710d03691ade5448478f12611cc4d
 
 build:
   number: 0
@@ -15,8 +15,8 @@ build:
     - nxstack=nexusformat.scripts.nxstack:main
     - nxduplicate=nexusformat.scripts.nxduplicate:main
     - nexusformat=nexusformat.scripts.nexusformat:main
-  noarch: "python"
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  noarch: python
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -41,13 +41,13 @@ test:
     - nexusformat --help
 
 about:
-  home: "https://nexpy.github.io/nexpy/"
-  license: "BSD-3-Clause"
-  license_family: "BSD"
-  license_file: "COPYING"
-  summary: "nexusformat: Python API to access NeXus data"
-  doc_url: "https://nexpy.github.io/nexpy/"
-  dev_url: "https://github.com/nexpy/nexusformat"
+  home: https://nexpy.github.io/nexpy/
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: COPYING
+  summary: 'nexusformat: Python API to access NeXus data'
+  doc_url: https://nexpy.github.io/nexpy/
+  dev_url: https://github.com/nexpy/nexusformat
 
 extra:
   recipe-maintainers:
