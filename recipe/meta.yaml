@@ -23,7 +23,7 @@ requirements:
     - pip
     - python >=3.6
     - setuptools
-    - numpy >=1.16.0
+    - numpy
   run:
     - h5py
     - ipython
