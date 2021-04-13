@@ -10,7 +10,7 @@ source:
   sha256: df5e4e303923ebba267a77525b5cb01df7e0fe44191f432c5ce1a0a9b885b819
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - nxstack=nexusformat.scripts.nxstack:main
     - nxduplicate=nexusformat.scripts.nxduplicate:main
@@ -27,7 +27,7 @@ requirements:
   run:
     - h5py
     - ipython
-    - numpy
+    - numpy >=1.16.0
     - python >=3.6
 
 test:
