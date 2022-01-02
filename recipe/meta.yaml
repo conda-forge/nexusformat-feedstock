@@ -12,23 +12,25 @@ source:
 build:
   number: 0
   entry_points:
-    - nxstack=nexusformat.scripts.nxstack:main
-    - nxduplicate=nexusformat.scripts.nxduplicate:main
     - nexusformat=nexusformat.scripts.nexusformat:main
+    - nxconsolidate=nexusformat.scripts.nxconsolidate:main
+    - nxdir=nexusformat.scripts.nxdir:main
+    - nxduplicate=nexusformat.scripts.nxduplicate:main
+    - nxstack=nexusformat.scripts.nxstack:main
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
+    - python >=3.6
     - pip
-    - python >=3.6
-    - setuptools
-    - numpy
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
-    - h5py
-    - ipython
-    - numpy >=1.16.0
     - python >=3.6
+    - numpy
+    - h5py >=2.9
+    - scipy
 
 test:
   imports:
@@ -36,9 +38,11 @@ test:
     - nexusformat.nexus
     - nexusformat.scripts
   commands:
-    - nxstack --help
-    - nxduplicate --help
     - nexusformat --help
+    - nxconsolidate --help
+    - nxdir --help
+    - nxduplicate --help
+    - nxstack --help
 
 about:
   home: https://nexpy.github.io/nexpy/
