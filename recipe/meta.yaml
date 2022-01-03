@@ -1,5 +1,5 @@
 {% set name = "nexusformat" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,28 +7,30 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6606208210459b1638c7f2bd72419fa0aab55df668c5e6d0d1e66168899fbd8e
+  sha256: 785b5431276f8747f4243164ada2befe2fceb0a63aceaad2485e50eed5997cb1
 
 build:
   number: 0
   entry_points:
-    - nxstack=nexusformat.scripts.nxstack:main
-    - nxduplicate=nexusformat.scripts.nxduplicate:main
     - nexusformat=nexusformat.scripts.nexusformat:main
+    - nxconsolidate=nexusformat.scripts.nxconsolidate:main
+    - nxdir=nexusformat.scripts.nxdir:main
+    - nxduplicate=nexusformat.scripts.nxduplicate:main
+    - nxstack=nexusformat.scripts.nxstack:main
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
+    - python >=3.6
     - pip
-    - python >=3.6
-    - setuptools
-    - numpy
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
-    - h5py
-    - ipython
-    - numpy >=1.16.0
     - python >=3.6
+    - numpy
+    - h5py >=2.9
+    - scipy
 
 test:
   imports:
@@ -36,9 +38,11 @@ test:
     - nexusformat.nexus
     - nexusformat.scripts
   commands:
-    - nxstack --help
-    - nxduplicate --help
     - nexusformat --help
+    - nxconsolidate --help
+    - nxdir --help
+    - nxduplicate --help
+    - nxstack --help
 
 about:
   home: https://nexpy.github.io/nexpy/
