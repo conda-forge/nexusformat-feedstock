@@ -1,5 +1,5 @@
 {% set name = "nexusformat" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 785b5431276f8747f4243164ada2befe2fceb0a63aceaad2485e50eed5997cb1
+  sha256: 0c996368a693b1b8318da072245f4de2b252eaae2329cea7c5b07f90ab239ecb
 
 build:
   number: 0
