@@ -10,7 +10,7 @@ source:
   sha256: 4224bc22629b7d18bd48af6ebc4d653c4db920f99753c7b9b3a28a77749f3e82
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - nexusformat=nexusformat.scripts.nexusformat:main
     - nxconsolidate=nexusformat.scripts.nxconsolidate:main
@@ -31,6 +31,7 @@ requirements:
     - numpy
     - h5py >=2.9
     - scipy
+    - hdf5plugin
 
 test:
   imports:
