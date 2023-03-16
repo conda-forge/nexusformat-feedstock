@@ -1,11 +1,11 @@
-About nexusformat
-=================
+About nexusformat-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nexusformat-feedstock/blob/main/LICENSE.txt)
 
 Home: https://nexpy.github.io/nexpy/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nexusformat-feedstock/blob/main/LICENSE.txt)
 
 Summary: nexusformat: Python API to access NeXus data
 
