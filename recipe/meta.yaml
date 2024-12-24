@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 4924ba2d339da8b4c7346a4144eed410b17da896ffb06f04c2b13f6b3c64ef03
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - nexusformat=nexusformat.scripts.nexusformat:main
     - nxconsolidate=nexusformat.scripts.nxconsolidate:main
@@ -22,18 +22,20 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools >=45
     - setuptools_scm >=6.2
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - h5py >=2.9
     - scipy
     - hdf5plugin
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - nexusformat
     - nexusformat.nexus
