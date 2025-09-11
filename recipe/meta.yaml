@@ -24,14 +24,18 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=45
-    - setuptools_scm >=6.2
+    - setuptools >=64
+    - setuptools_scm >=8
   run:
     - python >={{ python_min }}
     - numpy
-    - h5py >=2.9
+    - h5py
     - scipy
     - hdf5plugin
+    - colored
+    - pygments
+    - packaging
+    - python-dateutil
 
 test:
   requires:
