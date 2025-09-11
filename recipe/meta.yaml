@@ -1,5 +1,5 @@
 {% set name = "nexusformat" %}
-{% set version = "1.0.8" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cec20e9d680c6d4689977b479e9422177f90cb8f1dc0a0c0bc5960eb3f215bf3
+  sha256: 98819b9a94fdf993c3dd7f7df5f85949d4a0fd7808fd275b12813fa1aae3b92d
 
 build:
   number: 0
@@ -24,14 +24,18 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=45
-    - setuptools_scm >=6.2
+    - setuptools >=64
+    - setuptools_scm >=8
   run:
     - python >={{ python_min }}
     - numpy
-    - h5py >=2.9
+    - h5py
     - scipy
     - hdf5plugin
+    - colored
+    - pygments
+    - packaging
+    - python-dateutil
 
 test:
   requires:
