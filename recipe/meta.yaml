@@ -1,13 +1,13 @@
 {% set name = "nexusformat" %}
-{% set version = "2.0.3" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15e00ce62c137c2fc471597f2ffd65ecd4ee65c567648490a694ca691a9695d0
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 0d709cf17e0bb4eb20e7b7f98e0f8d2642b96351e7daf483dbe92f4fcee27bf2
 
 build:
   number: 0
@@ -32,6 +32,8 @@ requirements:
     - h5py
     - scipy
     - hdf5plugin
+    - lxml
+    - chardet
     - colored
     - pygments
     - packaging
