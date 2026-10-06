@@ -32,6 +32,8 @@ requirements:
     - h5py
     - scipy
     - hdf5plugin
+    - lxml
+    - chardet
     - colored
     - pygments
     - packaging
